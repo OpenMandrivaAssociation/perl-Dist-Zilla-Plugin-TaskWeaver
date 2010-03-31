@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-Plugin-TaskWeaver
-%define upstream_version 0.093450
+%define upstream_version 0.100890
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
