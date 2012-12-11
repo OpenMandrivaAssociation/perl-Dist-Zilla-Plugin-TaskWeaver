@@ -1,25 +1,25 @@
 %define upstream_name    Dist-Zilla-Plugin-TaskWeaver
 %define upstream_version 0.101620
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Dist::Zilla::Plugin::TaskWeaver's helper
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Dist::Zilla::Plugin::TaskWeaver's helper
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Dist::Zilla)
-BuildRequires: perl(Dist::Zilla::Plugin::PodWeaver)
-BuildRequires: perl(Moose)
-BuildRequires: perl(Moose::Autobox)
-BuildRequires: perl(Pod::Elemental)
-BuildRequires: perl(Pod::Weaver)
-BuildRequires: perl(Test::More)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Dist::Zilla)
+BuildRequires:	perl(Dist::Zilla::Plugin::PodWeaver)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(Moose::Autobox)
+BuildRequires:	perl(Pod::Elemental)
+BuildRequires:	perl(Pod::Weaver)
+BuildRequires:	perl(Test::More)
+BuildArch:	noarch
 
 %description
 The TaskWeaver plugin acts just like the PodWeaver plugin, but gets its
@@ -36,24 +36,17 @@ TaskWeaver expects that your _.pm_ file will have Pod like the following:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
 
