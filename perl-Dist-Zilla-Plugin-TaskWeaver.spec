@@ -1,9 +1,9 @@
 %define upstream_name    Dist-Zilla-Plugin-TaskWeaver
-%define upstream_version 0.101620
+%define upstream_version 0.101626
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Dist::Zilla::Plugin::TaskWeaver's helper
 License:	GPL+ or Artistic
@@ -49,4 +49,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 

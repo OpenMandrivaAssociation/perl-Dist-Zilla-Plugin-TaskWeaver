@@ -1,2 +1,4 @@
+removed_sources:
+  Dist-Zilla-Plugin-TaskWeaver-0.101620.tar.gz: 168660ac5d5c9ad4be0c739abde858da43d65258
 sources:
-  "Dist-Zilla-Plugin-TaskWeaver-0.101620.tar.gz": 168660ac5d5c9ad4be0c739abde858da43d65258
+  Dist-Zilla-Plugin-TaskWeaver-0.101626.tar.gz: ca69d2f79941859a791c983e9e3174ba27c5f06c
